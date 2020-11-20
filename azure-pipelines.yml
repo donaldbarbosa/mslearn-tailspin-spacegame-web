@@ -26,14 +26,14 @@ steps:
     inputs:
       verbose: false
 
-  - script: ./node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot'
+  - script: './node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot'
     displayName: "Compile Sass assets"
 
   - task: gulp@1
     displayName: "Run gulp tasks"
 
   - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
-    dusplayName: "Write build info"
+    displayName: "Write build info"
     workingDirectory: Tailspin.SpaceGame.Web/wwwroot
 
   - task: DotNetCoreCLI@2
