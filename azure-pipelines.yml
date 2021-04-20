@@ -11,5 +11,7 @@ steps:
 - task: PythonScript@0
   inputs:
     scriptSource: 'inline'
-    script: 'print(''hello '' + sys.argv[0])'
+    script: |
+      import sys
+      print('hello ' + sys.argv[0])
     arguments: 'asd'
